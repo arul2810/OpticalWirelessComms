@@ -1,0 +1,29 @@
+OutputPort1 = InputPort1;
+
+Opti_Signal = InputPort1.Sampled.Signal
+
+Opti_Time = InputPort1.Sampled.Time
+
+tiledlayout ( 2,1 )
+
+nexttile
+
+plot ( Opti_Time, Opti_Signal )
+
+title( "Optisystem Plot" )
+
+Signal_Freq = 500000000
+
+Signal_sine = sin ( 2 * pi  * Signal_Freq * Opti_Time + 1.5708 );
+
+Signal_MZ = Signal_sine/2;
+
+Signal_Matlab = Signal_MZ + 0.5 ;
+
+nexttile
+
+plot ( Opti_Time, Signal_Matlab )
+
+title ( "MATLAB Plot")
+
+
